@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Tables / Data - NiceAdmin Bootstrap Template</title>
+    <title>Konfirmasi Pembayaran</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="<?= base_url(); ?>assets/img/favicon.png" rel="icon">
+    <?php $this->load->view('tab_icon'); ?>
     <link href="<?= base_url(); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -28,6 +28,15 @@
 
     <!-- Template Main CSS File -->
     <link href="<?= base_url(); ?>assets/css/style.css" rel="stylesheet">
+
+    <style>
+        .form-space {
+            /* display: inline-block; */
+            /* Menjadikan form berdampingan secara horizontal */
+            margin-right: 10px;
+            /* Memberikan jarak antara kedua form */
+        }
+    </style>
 
     <!-- =======================================================
   * Template Name: NiceAdmin
@@ -94,14 +103,24 @@
                                 <tbody>
                                     <?php foreach ($daftar as $key) : ?>
                                         <tr>
-                                            <td class="text-center"><?php echo $key['id_tagihan'] ?></td>
+                                            <td class="text-center">#<?php echo $key['id_tagihan'] ?></td>
                                             <td class="text-center"><?php echo $key['name'] ?></td>
                                             <td class="text-center"><?php echo $key['jumlah_tagihan'] ?></td>
-                                            <td class="text-center"><img src="<?= base_url(); ?>assets/img/logo.png" alt=""></td>
+                                            <td class="text-center"><img src="http://localhost/ecommerce/asset/images/bukti_bayar/<?php echo $key['bukti_pembayaran'] ?>" alt="Pasar"></td>
                                             <td class="text-center"><span class="text-capitalize"><?php echo $key['status'] ?></span></td>
                                             <td class="text-center">
-                                                <button type="button" class="btn btn-success"><i class="bi bi-check-circle"></i></button>
-                                                <button type="button" class="btn btn-danger"><i class="bi bi-exclamation-octagon"></i></button>
+                                                <div style="display: flex; ">
+                                                    <div style="margin-right: 10px;">
+                                                        <form action="konfirmasi_bayar/statusSukses" method="post">
+                                                            <input type="hidden" name="id_tagihan" id="id_tagihan" value="<?php echo $key['id_tagihan'] ?>">
+                                                            <button type="submit" class="btn btn-success"><i class="bi bi-check-circle"> </i></button>
+                                                        </form>
+                                                    </div>
+                                                    <form action="konfirmasi_bayar/statusGagal" method="post">
+                                                        <input type="hidden" name="id_tagihan" id="id_tagihan" value="<?php echo $key['id_tagihan'] ?>">
+                                                        <button type="submit" class="btn btn-danger"><i class="bi bi-exclamation-octagon"></i></button>
+                                                    </form>
+                                                </div>
                                             </td>
                                         </tr>
                                     <?php endforeach  ?>

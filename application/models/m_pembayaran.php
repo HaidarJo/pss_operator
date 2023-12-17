@@ -13,6 +13,26 @@ class m_pembayaran extends CI_Model
 
         return $query->result_array();
     }
+
+    function updateStatusSukses($id_tagihan)
+    {
+
+        $query = $this->db->query("
+        UPDATE tb_pembayaran
+        SET status = 'Pembayaran Sukses'
+        WHERE id_tagihan = $id_tagihan;
+        ");
+    }
+
+    function updateStatusGagal($id_tagihan)
+    {
+
+        $query = $this->db->query("
+        UPDATE tb_pembayaran
+        SET status = 'Pembayaran Gagal'
+        WHERE id_tagihan = $id_tagihan;
+        ");
+    }
 }
 
 /* End of file m_pembayaran.php */
