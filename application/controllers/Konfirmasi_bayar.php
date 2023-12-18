@@ -15,6 +15,7 @@ class Konfirmasi_bayar extends CI_Controller
 
     public function index()
     {
+        $data['onProses'] = $this->m_pembayaran->onProses();
         $data['daftar'] = $this->m_pembayaran->getDataPembayaran();
         $this->load->view('Konfirmasi_bayar/v_konfirmasi_bayar', $data);
     }

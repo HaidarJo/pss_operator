@@ -7,10 +7,20 @@ class m_pembayaran extends CI_Model
     {
         $query = $this->db->query("
         SELECT * FROM tb_tagihan INNER JOIN tb_pembayaran ON tb_tagihan.id_tagihan = tb_pembayaran.id_tagihan 
-        INNER JOIN tb_pembeli ON tb_tagihan.id_pembeli = tb_pembeli.id_pembeli;
+        INNER JOIN tb_pembeli ON tb_tagihan.id_pembeli = tb_pembeli.id_pembeli
+        order by status desc;
 
         ");
 
+        return $query->result_array();
+    }
+
+    function onProses()
+    {
+
+        $query = $this->db->query("
+        SELECT COUNT(status) AS status FROM tb_pembayaran WHERE status='Sedang Diproses';
+        ");
         return $query->result_array();
     }
 

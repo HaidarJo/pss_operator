@@ -85,6 +85,11 @@
                                 jika ingin mengkonfirmasi pembayaran GAGAL.
                             </p>
                             <br>
+                            <p>
+                                Jumlah tagihan yang "Sedang Diproses" :
+                                <?php foreach ($onProses as $key) : ?> <span class="badge bg-primary text-capitalize"><?php echo $key['status'] ?></span> <?php endforeach ?>
+                            </p>
+                            <br>
 
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
@@ -103,11 +108,20 @@
                                 <tbody>
                                     <?php foreach ($daftar as $key) : ?>
                                         <tr>
+
                                             <td class="text-center">#<?php echo $key['id_tagihan'] ?></td>
                                             <td class="text-center"><?php echo $key['name'] ?></td>
                                             <td class="text-center"><?php echo $key['jumlah_tagihan'] ?></td>
                                             <td class="text-center"><img src="http://localhost/ecommerce/asset/images/bukti_bayar/<?php echo $key['bukti_pembayaran'] ?>" alt="Pasar"></td>
-                                            <td class="text-center"><span class="text-capitalize"><?php echo $key['status'] ?></span></td>
+                                            <td class="text-center">
+                                                <?php if (($key['status']) == 'Sedang Diproses') { ?>
+                                                    <span class="badge bg-primary text-capitalize"><i class="bi bi-clock me-1"></i> <?php echo $key['status'] ?></span>
+                                                <?php } elseif (($key['status']) == 'Pembayaran Gagal') { ?>
+                                                    <span class="badge bg-danger text-capitalize"><i class="bi bi-exclamation-triangle me-1"></i> <?php echo $key['status'] ?></span>
+                                                <?php } else { ?>
+                                                    <span class="badge bg-success text-capitalize"><i class="bi bi-check-circle me-1"></i> <?php echo $key['status'] ?></span>
+                                                <?php } ?>
+                                            </td>
                                             <td class="text-center">
                                                 <div style="display: flex; ">
                                                     <div style="margin-right: 10px;">
