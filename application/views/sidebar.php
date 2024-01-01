@@ -11,18 +11,19 @@
 
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="<?= base_url('konfirmasi_bayar'); ?>">
+            <a class="nav-link collapsed" href="<?= base_url('Produk'); ?>">
                 <i class="bi bi-layout-text-window-reverse"></i>
-                <span>Konfirmasi Pembayaran</span>
+                <span>Produk</span>
             </a>
         </li><!-- End Profile Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="<?= base_url(); ?>users-profile.html">
+            <a class="nav-link collapsed" href="<?= base_url('#'); ?>">
                 <i class="bi bi-layout-text-window-reverse"></i>
-                <span>Unggah Resi</span>
+                <span>Pesanan</span>
             </a>
         </li><!-- End Profile Page Nav -->
+
 
 
 

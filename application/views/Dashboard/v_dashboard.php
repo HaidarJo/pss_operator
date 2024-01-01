@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Dashboard</title>
+    <title>Penjual - Dashboard</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -44,8 +44,10 @@
 
 <body>
 
+
     <!-- ======= Header ======= -->
     <?php $this->load->view('header'); ?>
+
     <!-- End Header -->
 
     <!-- ======= Sidebar ======= -->
@@ -91,7 +93,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Sales <span>| Today</span></h5>
 
-                                    <div class="d-flex align-items-center">
+                                    <!-- <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-cart"></i>
                                         </div>
@@ -100,7 +102,7 @@
                                             <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
 
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                             </div>
@@ -127,14 +129,14 @@
                                     <h5 class="card-title">Revenue <span>| This Month</span></h5>
 
                                     <div class="d-flex align-items-center">
-                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <!-- <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-currency-dollar"></i>
                                         </div>
                                         <div class="ps-3">
                                             <h6>$3,264</h6>
                                             <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
 
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 
@@ -163,14 +165,14 @@
                                     <h5 class="card-title">Customers <span>| This Year</span></h5>
 
                                     <div class="d-flex align-items-center">
-                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <!-- <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-people"></i>
                                         </div>
                                         <div class="ps-3">
                                             <h6>1244</h6>
                                             <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
 
-                                        </div>
+                                        </div> -->
                                     </div>
 
                                 </div>
@@ -212,7 +214,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <!-- <tr>
                                                 <th scope="row"><a href="<?= base_url(); ?>#">#2457</a></th>
                                                 <td>Brandon Jacob</td>
                                                 <td><a href="<?= base_url(); ?>#" class="text-primary">At praesentium minu</a></td>
@@ -246,7 +248,7 @@
                                                 <td><a href="<?= base_url(); ?>#" class="text-primary">Sunt similique distinctio</a></td>
                                                 <td>$165</td>
                                                 <td><span class="badge bg-success">Approved</span></td>
-                                            </tr>
+                                            </tr> -->
                                         </tbody>
                                     </table>
 
@@ -286,7 +288,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <!-- <tr>
                                                 <th scope="row"><a href="<?= base_url(); ?>#"><img src="<?= base_url(); ?>assets/img/product-1.jpg" alt=""></a></th>
                                                 <td><a href="<?= base_url(); ?>#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
                                                 <td>$64</td>
@@ -320,7 +322,7 @@
                                                 <td>$79</td>
                                                 <td class="fw-bold">41</td>
                                                 <td>$3,239</td>
-                                            </tr>
+                                            </tr> -->
                                         </tbody>
                                     </table>
 

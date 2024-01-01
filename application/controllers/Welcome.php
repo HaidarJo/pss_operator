@@ -21,7 +21,7 @@ class Welcome extends CI_Controller
 	 */
 	public function index()
 	{
-		redirect('Dashboard');
+		redirect('Auth');
 		// $this->load->view('welcome_message');
 	}
 }
