@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Penjual - Produk</title>
+    <title>Penjual - Pesanan</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -60,12 +60,12 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Daftar Produk</h1>
+            <h1>Daftar Pesanan</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="<?= base_url(); ?>index.html">Home</a></li>
                     <li class="breadcrumb-item">Tables</li>
-                    <li class="breadcrumb-item active">Data</li>
+                    <li class="breadcrumb-item active">Pesanan</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -76,17 +76,16 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Daftar Pembayaran</h5>
+                            <h5 class="card-title">Daftar Pesanan</h5>
                             <p>
-                                Klik tombol ini <button class="btn btn-success"><i class="bi bi-pen"></i></button> jika ingin mengubah informasi produk.
+                                Klik tombol ini <button class="btn btn-success"><i class="bi bi-check-circle"></i></button> jika barang sudah dikemas.
                             </p>
-                            <p>
+                            <!-- <p>
                                 Klik tombol ini <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                 jika ingin menghapus produk.
-                            </p>
+                            </p> -->
                             <br>
                             <br>
-                            <p><a href="<?= base_url('produk/tambahProduk'); ?>" class="btn btn-primary"><i class="bi bi-plus-circle"> Tambah Produk Baru</i></a></p>
 
 
                             <!-- Table with stripped rows -->
@@ -94,41 +93,47 @@
                                 <thead>
                                     <tr>
                                         <th>
-                                            <b>ID</b> Produk
+                                            <b>ID</b> Transaksi
                                         </th>
+                                        <th>Nama Pembeli</th>
                                         <th>Nama Produk</th>
-                                        <th>Harga</th>
                                         <th>Foto</th>
-                                        <th>Deskripsi</th>
-                                        <th>Stok</th>
+                                        <th>Jumlah</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($dataProduk as $key) : ?>
+                                    <?php foreach ($dataPesanan as $key) : ?>
                                         <tr>
-                                            <td class="text-center">#<?php echo $key['id_produk'] ?></td>
+                                            <td class="text-center">#<?php echo $key['id_transaksi'] ?></td>
+                                            <td class="text-center"><?php echo $key['name'] ?></td>
                                             <td class="text-center"><?php echo $key['nama_produk'] ?></td>
-                                            <td class="text-center"><?php echo $key['harga'] ?></td>
                                             <td class="text-center">
                                                 <!-- <button type="submit" class="btn btn-secondary"><i class="bi bi-eye"> Lihat Foto -->
-                                                <img width="50px" height="60px" src="<?= base_url() ?>/assets/produk/<?php echo $key['foto_produk'] ?>">
+                                                <img width="80px" height="95px" src="<?= base_url() ?>/assets/produk/<?php echo $key['foto_produk'] ?>">
                                                 <!-- <img width="100px" height="50px" src="<?php echo base_url() . 'asset/produk/' . $key->foto_produk ?>"> -->
                                             </td>
-                                            <td class="text-center"><?php echo $key['deskripsi_produk'] ?></td>
-                                            <td class="text-center"><?php echo $key['stok'] ?></td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">
+                                                <?php if (($key['status']) == 'sedang dikemas') { ?>
+                                                    <span class="badge bg-primary text-capitalize"><i class="bi bi-clock me-1"></i> <?php echo $key['status'] ?></span>
+                                                <?php } else { ?>
+                                                    <span class="badge bg-success text-capitalize"><i class="bi bi-check-circle me-1"></i> <?php echo $key['status'] ?></span>
+                                                <?php } ?>
+                                            </td>
                                             <td class="text-center">
                                                 <div style="display: flex; ">
                                                     <div style="margin-right: 10px;">
-                                                        <form action="produk/update" method="post">
-                                                            <input type="hidden" name="id_produk" id="id_produk" value="<?php echo $key['id_produk'] ?>">
-                                                            <button type="submit" class="btn btn-success"><i class="bi bi-pen"> </i></button>
+                                                        <form action="pesanan/selesaiKemas" method="post">
+                                                            <input type="hidden" name="id_transaksi" id="id_transaksi" value="<?php echo $key['id_transaksi'] ?>">
+                                                            <button type="submit" class="btn btn-success"><i class="bi bi-check-circle"> </i></button>
                                                         </form>
                                                     </div>
-                                                    <form action="produk/hapus" method="post">
-                                                        <input type="hidden" name="id_produk" id="id_produk" value="<?php echo $key['id_produk'] ?>">
-                                                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                                    </form>
+                                                    <!-- <form action="konfirmasi_bayar/statusGagal" method="post">
+                                                        <input type="hidden" name="id_transaksi" id="id_transaksi" value="<?php echo $key['id_transaksi'] ?>">
+                                                        <button type="submit" class="btn btn-danger"><i class="bi bi-exclamation-octagon"></i></button>
+                                                    </form> -->
                                                 </div>
                                             </td>
                                         </tr>

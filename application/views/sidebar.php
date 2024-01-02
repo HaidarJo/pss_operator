@@ -18,7 +18,7 @@
         </li><!-- End Profile Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="<?= base_url('#'); ?>">
+            <a class="nav-link collapsed" href="<?= base_url('pesanan'); ?>">
                 <i class="bi bi-layout-text-window-reverse"></i>
                 <span>Pesanan</span>
             </a>
@@ -50,33 +50,33 @@
             </a>
         </li><!-- End Contact Page Nav -->
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link collapsed" href="<?= base_url(); ?>pages-register.html">
                 <i class="bi bi-card-list"></i>
                 <span>Register</span>
             </a>
-        </li><!-- End Register Page Nav -->
+        </li>
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?= base_url(); ?>pages-login.html">
                 <i class="bi bi-box-arrow-in-right"></i>
                 <span>Login</span>
             </a>
-        </li><!-- End Login Page Nav -->
+        </li>
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?= base_url(); ?>pages-error-404.html">
                 <i class="bi bi-dash-circle"></i>
                 <span>Error 404</span>
             </a>
-        </li><!-- End Error 404 Page Nav -->
+        </li>
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?= base_url(); ?>pages-blank.html">
                 <i class="bi bi-file-earmark"></i>
                 <span>Blank</span>
             </a>
-        </li><!-- End Blank Page Nav -->
+        </li> -->
 
     </ul>
 
